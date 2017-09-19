@@ -4,23 +4,27 @@
 
 ## Tasks
 
-- [ ] 1. Ознакомиться со ссылками учебного материала
-- [ ] 2. Выполнить инструкцию учебного материала
-- [ ] 3. Составить отчет и отправить ссылку личным сообщением в **Slack**
+- [X] 1. Ознакомиться со ссылками учебного материала
+- [X] 2. Выполнить инструкцию учебного материала
+- [X] 3. Составить отчет и отправить ссылку личным сообщением в **Slack**
  
 ## Tutorial
 
 ```bash
+/*Создание переменных*/
 $ export GITHUB_USERNAME=<имя_пользователя>
 $ export GIST_TOKEN=<сохраненный_токен>
+/*Выбор текстового редактора*/
 $ alias edit=<nano|vi|vim|subl>
 ```
 
 ```bash
+/*Установка gitsup*/
 $ npm install -g gistup
 ```
 
 ```bash
+/*Сохранение токена в файл*/
 $ cat > ~/.gistup.json <<EOF
 {
   "token": "${GIST_TOKEN}"
@@ -29,6 +33,7 @@ EOF
 ```
 
 ```bash
+/*Создание новых директорий*/
 $ cd ~
 $ mkdir -p workspace/labs/projects/
 $ mkdir -p workspace/labs/tasks/
@@ -38,12 +43,19 @@ $ mkdir -p workspace/labs/reports/
 ## Report
 
 ```bash
+/*Переход в "/workspace/labs/"*/
 $ cd ~/workspace/labs/
+/*Создание переменной*/
 $ export LAB_NUMBER=02
+/*Клонирование*/
 $ git clone https://github.com/tp-labs/lab${LAB_NUMBER} tasks/lab${LAB_NUMBER}
+/*Создание новой директории*/
 $ mkdir reports/lab${LAB_NUMBER}
+/*Копирования файлов*/
 $ cp tasks/lab${LAB_NUMBER}/README.md reports/lab${LAB_NUMBER}/REPORT.md
+/*Переход в "reports/lab02"
 $ cd reports/lab${LAB_NUMBER}
+/*Редактирование файла*/
 $ edit REPORT.md
 $ gistup -m "lab${LAB_NUMBER}"
 ```
